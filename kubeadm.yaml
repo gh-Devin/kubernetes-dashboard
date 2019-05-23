@@ -1,10 +1,12 @@
 apiVersion: kubeadm.k8s.io/v1beta1
 kind: InitConfiguration
 localAPIEndpoint:
-  advertiseAddress: 10.139.149.72
+  advertiseAddress: 192.168.100.116
 ---
 apiVersion: kubeadm.k8s.io/v1beta1
 kind: ClusterConfiguration
 kubernetesVersion: v1.13.4
 networking:
+  dnsDomain: "cluster.local"
   podSubnet: "10.244.0.0/16"
+  serviceSubnet: "10.96.0.0/12"
